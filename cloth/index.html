@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Only for Desktop</title>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+      <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+
+      <style>
+          @media only screen and (max-width: 768px) {
+              /*.girl{*/
+              /*    background-image: url(bg_1.jpeg);*/
+              /*    background-size: 10% 10%;*/
+              /*    background-position: 10% 10%;*/
+              /*}*/
+
+              body{
+                  margin: 10px;
+              }
+
+              div + .girlmgn{
+                  margin: 10px;
+              }
+          }
+
+
+          body{
+              padding-top: 90px;
+          }
+
+          .borders{
+              border: 3px solid #000000;
+          }
+
+          .girl{
+              height: 550px;
+              background-image: url(bg_1.jpeg);
+              background-size: 100% 100%;
+          }
+
+          .girlmgn{
+              margin-left: 120px;
+          }
+
+          #slider{
+              height:500px;
+              width:85%;
+              overflow:hidden;
+              margin-left: 70px;
+              background:#ffffff;
+          }
+
+          .slide {
+              height:480px;
+              float:left;
+              margin:10px;
+          }
+
+          .slide:hover, .slide:focus, .slide:active{
+              box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+          }
+
+          #slider2 {
+              height:500px;
+              width:85%;
+              overflow:hidden;
+              margin-left: 70px;
+              background:#ffffff;
+          }
+
+          .hvr-glow {
+              display: inline-block;
+              vertical-align: middle;
+              -webkit-transform: perspective(1px) translateZ(0);
+              transform: perspective(1px) translateZ(0);
+              box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+              -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+              -webkit-transition-property: box-shadow;
+              transition-property: box-shadow;
+          }
+
+          .hvr-glow:hover, .hvr-glow:focus, .hvr-glow:active {
+              box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+          }
+
+      </style>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <script>
+          $(document).ready(function () {
+              //you can set this, as long as it's not greater than the slides length
+              var show = 4;
+              var w = $('#slider').width() / show+1;
+              var l = $('.slide').length;
+
+              $('.slide').width(w);
+              $('#slide-container').width(w * l)
+
+              function slider() {
+                  $('.slide:first-child').animate({
+                      marginLeft: -w
+                  }, 'slow', function () {
+                      $(this).appendTo($(this).parent()).css({marginLeft: 0});
+                  });
+              }
+              var timer = setInterval(slider, 4000);
+
+              $('#slider').hover(function(){
+                  clearInterval(timer);
+              },function(){
+                  timer = setInterval(slider, 4000);
+              });
+          });
+
+          $(document).ready(function () {
+              //you can set this, as long as it's not greater than the slides length
+              var show = 4;
+              var w = $('#slider2').width() / show+1;
+              var l = $('.slide').length;
+
+              $('.slide').width(w);
+              $('#slide-container2').width(w * l)
+
+              function slider() {
+                  $('.slide:first-child').animate({
+                      marginLeft: -w
+                  }, 'slow', function () {
+                      $(this).appendTo($(this).parent()).css({marginLeft: 0});
+                  });
+              }
+              var timer = setInterval(slider, 4000);
+
+              $('#slider2').hover(function(){
+                  clearInterval(timer);
+              },function(){
+                  timer = setInterval(slider, 4000);
+              });
+          });
+
+      </script>
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-light" style="background-color: #ffffff; border-bottom: 1px solid #bfbfbf">
+
+        <a class="navbar-brand" style="font-size: 30px; margin: 10px 0 10px 40px;" href="#">Clothing store</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
+            <ul class="navbar-nav ml-auto nav-flex-icons">
+                <li class="nav-item active">
+                    <a class="nav-link m-lg-3 m-0 ml-4" href="#"  style="color: #ff0000;">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link m-lg-3 m-0 ml-4" href="#" style="color: black;">Women</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link m-lg-3 m-0 ml-4" href="#" style="color: black;">Men</a>
+                </li>
+                <p class="d-none d-lg-block" style="margin: 4px 15px 0 15px; font-size: 40px; font-weight: 100;">|</p>
+                <li class="nav-item">
+                    <a class="nav-link m-lg-3 m-0 ml-4" href="#" style="color: black;">Cart <ion-icon name="cart-outline" style="font-size:24px; margin-bottom: -5px">></ion-icon></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron girl">
+        <div class="girlmgn">
+            <p style="margin: 50px 0 0 0; font-size: 22px; color: red;">New arrivals</p>
+            <p style="font-size: 60px; font-weight: bold;">Every shade<br>of summer</p>
+            <button type="button" name="button" class="btn hvr-glow" style="background: #ffffff; margin:20px 0 0 0; height: 57px; width: 250px">Shop now</button>
+        </div>
+    </div>
+
+    <div>
+        <h1 style="font-weight: bold; margin-top: 60px; text-align: center">Featured products</h1>
+    </div>
+
+    <div id="slider">
+        <div id="slide-container">
+            <div class="slide">
+                <a href="#">
+                    <img src="img_1.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Short-sleeved t-shirt</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$9.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_2.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Long-sleeved t-shirt</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$29.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_3.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Tube Dress</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$39.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_4.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Sleeveless shirt</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$19.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_5.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Striped Dress</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$29.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_6.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Floral-print romper</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$19.00</p>
+            </div>
+        </div>
+    </div>
+
+  <div align="center" style="margin: 30px 0 100px 0">
+      <button type="button" name="button" class="btn hvr-glow" style="background: #ffffff; height: 57px; width: 250px">Shop now</button>
+  </div>
+
+    <div class="jumbotron" style="height: 450px; background-image: url(bg_2_1.jpeg); background-size: 75% 100%; background-position: 70% 70%; background-repeat: no-repeat; background-color: #5ccbcc">
+        <div>
+            <p style="margin: 50px 0 0 100px; font-size: 22px; color: red;">New arrivals</p>
+            <p style="font-size: 60px; font-weight: bold; margin-left: 100px;">Coats & Jackets</p>
+            <button type="button" name="button" class="btn hvr-glow" style="background: #ffffff; margin:20px 0 0 100px; height: 57px; width: 250px">Shop now</button>
+        </div>
+    </div>
+
+    <div>
+        <h1 style="font-weight: bold; margin-top: 60px; text-align: center">Featured products</h1>
+    </div>
+
+    <div id="slider2">
+        <div id="slide-container2">
+            <div class="slide">
+                <a href="#">
+                    <img src="img_7.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">T-shirt</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$29.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_9.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Suit Blazer</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$99.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_10.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Cotton shirt</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$59.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_11.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">V-neck t-shirt</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$29.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_12.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Blazer</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$99.00</p>
+            </div>
+            <div class="slide">
+                <a href="#">
+                    <img src="img_8.png" alt="" height="380">
+                </a>
+                <p style="text-align: center; margin-top: 20px">Biker Jacket</p>
+                <p style="text-align: center; margin-top: -10px; font-weight: bold; font-size: 20px;">$299.00</p>
+            </div>
+        </div>
+    </div>
+
+    <div align="center" style="margin: 30px 0 100px 0">
+        <button type="button" name="button" class="btn hvr-glow" style="background: #ffffff; height: 57px; width: 250px">Shop now</button>
+    </div>
+
+  <div class="jumbotron" style="height:230px;">
+      <div class="row">
+          <div class="col-lg-3" style="margin-left: 10px; padding-right: 50px ">
+              <h4>Clothing store</h4>
+              <p style="font-weight: lighter; font-size: 15px">Click here and start typing. Sed ut perspiciatis unde omnis iste.</p>
+          </div>
+          <div class="col-lg-2">
+              <p style="color: gray">Information</p>
+              <a href="#" style="font-weight: lighter; text-decoration: underline; color: gray;" onmouseover="this.style.color = 'black'" onMouseOut="this.style.color='gray'">Privacy Policy</a>
+              <a href="#" style="font-weight: lighter; text-decoration: underline; color: gray;" onmouseover="this.style.color = 'black'" onMouseOut="this.style.color='gray'"><br>Terms and conditions</a>
+          </div>
+          <div class="col-lg-3">
+              <p style="color: gray">Store</p>
+              <a href="#" style="font-weight: lighter; text-decoration: underline; color: gray;" onmouseover="this.style.color = 'black'" onMouseOut="this.style.color='gray'">About us</a>
+              <a href="#" style="font-weight: lighter; text-decoration: underline; color: gray;" onmouseover="this.style.color = 'black'" onMouseOut="this.style.color='gray'"><br>Contact us</a>
+          </div>
+          <div class="col-lg-3" style="margin-left: 100px">
+              <p style="font-weight: lighter; color: gray; text-align: right">Email: <b>rohitkumar.nsut@gmail.com</b></p>
+              <p style="font-weight: lighter; color: gray; text-align: right">Phone: <b>+91-8810420104</b></p>
+          </div>
+      </div>
+  </div>
+
+  </body>
+
+</html>
